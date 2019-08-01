@@ -2,10 +2,10 @@
   {{ if .Params.image }}
     <div class="site-featured-image">
       <figure class="post-thumbnail">
-        <img src="{{ .Params.image }}" />
+        <img class="u-featured" src="{{ .Params.image }}" />
       </figure>
       <div class="entry-header">
-        <h1 class="entry-title">{{ .Title }}</h1>
+        <h1 class="entry-title p-name">{{ .Title }}</h1>
         <div class="entry-meta">
           {{ partial "entry-meta" . }}
         </div>
@@ -15,16 +15,16 @@
 {{ end }}
 
 {{ define "main" }}
-  <article class="post entry">
+  <article class="post entry h-entry">
     {{ if (not (isset .Params "image")) }}
       <header class="entry-header">
-        <h1 class="entry-title">{{ .Title }}</h1>
+        <h1 class="entry-title p-name">{{ .Title }}</h1>
         <div class="entry-meta">
           {{ partial "entry-meta" . }}
         </div>
       </header>
     {{ end }}
-    <div class="entry-content">
+    <div class="entry-content e-content">
       {{ .Content }}
     </div>
     <div class="entry-footer">
